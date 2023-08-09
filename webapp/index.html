@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fortune Cookie Generator</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+  }
+  #fortune-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  #fortune-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div id="fortune-container">
+  <h1> Digital Fortune Cookie </h1>
+  <p>Click the button below to crack open your fortune cookie:</p>
+  <button id="fortune-button">Crack Open</button>
+  <p id="fortune-result"></p>
+</div>
+
+<script>
+  const fortunes = [
+    "A journey of a thousand miles begins with a single step.",
+    "Good things come to those who wait, but better things come to those who work.",
+    "The best way to predict the future is to create it.",
+    "You will find luck where you least expect it.",
+    "Your hard work will pay off in unexpected ways.",
+    "An exciting opportunity is in your future.",
+    "Happiness is not a destination, it's a way of life.",
+    "Your kindness will be repaid in abundance.",
+    "A smile is your passport into the hearts of others.",
+    "Your creativity will lead you to success."
+  ];
+
+  const fortuneButton = document.getElementById("fortune-button");
+  const fortuneResult = document.getElementById("fortune-result");
+
+  fortuneButton.addEventListener("click", () => {
+    const randomIndex = Math.floor(Math.random() * fortunes.length);
+    const randomFortune = fortunes[randomIndex];
+    fortuneResult.textContent = randomFortune;
+  });
+</script>
+</body>
+</html>
+
